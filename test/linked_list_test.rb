@@ -33,12 +33,11 @@ class Linked_listTest < Minitest::Test
     @list.append("West")
     @list.append("Rhodes")
     assert_equal @node, @list.head
+    refute @list.head.next_node
+    @list.append("Hardy")
   end
 end
 
-# => <Node @surname="Rhodes" @next_node=nil #5678904567890>
-# > list.head.next_node
-# => nil
 # > list.append("Hardy")
 # => => <Node @surname="Hardy" @next_node=nil #5678904567890>
 # > list.head.next_node
