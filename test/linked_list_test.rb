@@ -22,17 +22,10 @@ class Linked_listTest < Minitest::Test
     assert_instance_of Node, @list.append("West")
   end
 
-  def test_it_returns_list_with_node
+  def test_it_returns_list_with_node_and_next_node_shows_nil
     assert_instance_of Node, @list.append("West")
-  end 
-
+    refute @list.head.next_node
+    assert_equal 1, @list.count
+    assert_equal "The West family", @list.to_string
+  end
 end
-
-# > list
-# => <LinkedList @head=<Node @surname="West" ... > #45678904567>
-# > list.head.next_node
-# => nil
-# > list.count
-# => 1
-# > list.to_string
-# => "The West family"
