@@ -28,4 +28,22 @@ class Linked_listTest < Minitest::Test
     assert_equal 1, @list.count
     assert_equal "The West family", @list.to_string
   end
+
+  def test_it_is_keeping_track_of_nodes
+    @list.append("West")
+    @list.append("Rhodes")
+    assert_equal @node, @list.head
+  end
 end
+
+# => <Node @surname="Rhodes" @next_node=nil #5678904567890>
+# > list.head.next_node
+# => nil
+# > list.append("Hardy")
+# => => <Node @surname="Hardy" @next_node=nil #5678904567890>
+# > list.head.next_node
+# => <Node @surname="Hardy" @next_node=nil #5678904567890>
+# > list.count
+# => 2
+# > list.to_string
+# => "The Rhodes family, followed by the Hardy family"
